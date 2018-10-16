@@ -50,7 +50,6 @@ RUN apt-get update \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
     && composer --version \
-    && rm -rf /tmp/laravel \
     && mkdir /.composer && chmod 777 /.composer \
     && mkdir /usr/local/log \
     && chown www-data:www-data /usr/local/log \
