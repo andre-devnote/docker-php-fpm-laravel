@@ -2,6 +2,7 @@ FROM php:7.2-fpm
 LABEL maintainer="André Santos <andre.forweb@gmail.com>"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV DISABLE_BUILTIN_SERVER 0
 
 COPY composer-install.sh /usr/local/bin/composer-install
 
