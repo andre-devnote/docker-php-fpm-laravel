@@ -24,7 +24,6 @@ RUN apt-get update \
         libssl-dev \
         zip \
         unzip \
-        inotify-tools \
     && docker-php-ext-install \
         curl \
         fileinfo \
