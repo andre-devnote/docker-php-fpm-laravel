@@ -25,10 +25,7 @@ RUN apt-get update \
         zip \
         unzip \
     && docker-php-ext-install \
-        curl \
-        fileinfo \
         gd \
-        mbstring \
         zip \
         soap \
         pdo_mysql \
@@ -38,7 +35,6 @@ RUN apt-get update \
         calendar \
         intl \
         exif \
-        ftp \
         bcmath \
         opcache \
     && pecl install redis \
