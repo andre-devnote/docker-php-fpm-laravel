@@ -75,7 +75,8 @@ RUN chmod +x /usr/local/bin/docker-php-entrypoint \
     && chmod +x /usr/local/bin/exec.sh
 
 # arquivo default para testes
-RUN echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+RUN mkdir /var/www/html/public \
+    && echo "<?php phpinfo(); ?>" > /var/www/html/public/index.php
 
 WORKDIR /var/www/html
 
