@@ -14,7 +14,7 @@ RUN apt-get update \
         libcurl4-openssl-dev \
         libjpeg-dev \
         libpng-dev \
-        zlib1g-dev \
+        libzip-dev \
         libmcrypt-dev \
         libreadline-dev \
         libxml2-dev \
@@ -24,6 +24,8 @@ RUN apt-get update \
         libssl-dev \
         zip \
         unzip \
+    && docker-php-ext-configure zip --with-libzip \
+    && docker-php-ext-configure gd --with-jpeg-dir --with-png-dir --with-zlib-dir \
     && docker-php-ext-install \
         gd \
         zip \
@@ -39,8 +41,8 @@ RUN apt-get update \
         opcache \
     && pecl install redis \
     && pecl install mcrypt-1.0.1 \
-    && docker-php-ext-enable redis \
-    && docker-php-ext-enable mcrypt \
+    && pecl install imagick \
+    && docker-php-ext-enable redis mcrypt imagick \
     && chmod +x /usr/local/bin/composer-install \
     && /usr/local/bin/composer-install \
     && mv composer.phar /usr/local/bin/composer \
