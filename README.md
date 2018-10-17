@@ -2,9 +2,17 @@
 
 Imagem estendida do [php:7.2-fpm](https://github.com/docker-library/php/blob/f363b9f8a0e23e79faaa624ff5bf160b9dec18f4/7.2/stretch/fpm/Dockerfile) com a adição de algumas utilities para desenvolvimento com Laravel.
 
-*Observação:* A intenção dessa imagem é facilitar a criação de ambientes de desenvolvimento. **Não utilizar em produção** sem fazer os ajustes necessários (veja aqui).
+*Observação:* A intenção dessa imagem é facilitar a criação de ambientes de desenvolvimento. **Não utilizar em produção** sem fazer os ajustes necessários ([veja abaixo](#producao)).
 
 ## Como usar?
+
+TODO
+
+A forma mais simples é:
+
+`docker run --rm -d -p 8000:8000 devnote/php-fpm-laravel:7.2-dev`
+
+TODO
 
 ## O que está instalado na imagem?
 
@@ -20,18 +28,23 @@ Imagem estendida do [php:7.2-fpm](https://github.com/docker-library/php/blob/f36
 
 Também foram instalados os seguintes módulos do PHP:
 
-- bcmath
-- calendar
-- exif
-- gd
-- intl
-- mysqli
-- opcache
-- pdo_mysql
-- soap
-- xsl
-- zip
-- redis (pecl)
-- mcrypt-1.0.1 (pecl)
+- `bcmath`
+- `calendar`
+- `exif`
+- `gd`
+- `intl`
+- `mysqli`
+- `opcache`
+- `pdo_mysql`
+- `soap`
+- `xsl`
+- `zip`
+- `imagick` (pecl)
+- `mcrypt-1.0.1` (pecl)
+- `redis` (pecl)
 
 O timezone do sistema está configurado como "America/Sao_Paulo" e o umask padrão é 002 (novos arquivos criados como 775).
+
+## <a id="producao"></a>Posso usar essa imagem em produção?
+
+TODO
