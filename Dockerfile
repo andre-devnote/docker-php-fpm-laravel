@@ -73,7 +73,9 @@ RUN chmod +x /usr/local/bin/docker-php-entrypoint \
 
 # arquivo default para testes
 RUN mkdir /var/www/html/public \
-    && echo "<?php phpinfo(); ?>" > /var/www/html/public/index.php
+    && echo "<?php phpinfo(); ?>" > /var/www/html/public/index.php \
+    && chown -R www-data:www-data /var/www \
+    && chmod -R g+rwX /var/www
 
 WORKDIR /var/www/html
 

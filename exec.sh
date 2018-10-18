@@ -4,7 +4,8 @@
 # Ex: exec.sh composer install
 
 timeIni=`date --iso-8601='ns'`
+sleep 0.0001
 
 eval "$@"
 
-find ./ -path ./_docker -prune -o -newerct "$timeIni" -exec chmod g+rwX {} \;
+find ./ -path ./_docker -prune -o -newerct "$timeIni" -not -wholename "./" -exec chmod g+rwX {} \;

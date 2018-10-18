@@ -21,7 +21,7 @@ if [ -f "artisan" ]; then
     fi
 fi
 
-if [ "$DISABLE_BUILTIN_SERVER" = "1"]; then
+if [ "$DISABLE_BUILTIN_SERVER" = "1" ]; then
     rm /etc/supervisor/conf.d/php-server-worker.conf
 fi
 
